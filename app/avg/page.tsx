@@ -63,12 +63,18 @@ export default function AvgPage() {
         </div>
 
         <div className="mt-10 rounded-3xl border border-ink/8 bg-bone-200/50 p-7 sm:p-9">
-          <h2 className="text-lg font-semibold tracking-tight text-ink">
-            Hosting in de EU, data van jou
-          </h2>
-          <p className="mt-3 max-w-3xl text-pretty leading-relaxed text-ink/65">
-            Portalen draaien standaard op infrastructuur binnen de EU (Vercel en een
-            EU-database). Je data blijft te allen tijde jouw eigendom en is op elk
+          <div className="flex items-center gap-3">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-ink text-white">
+              <Icon name="database" className="h-5 w-5" />
+            </span>
+            <h2 className="text-lg font-semibold tracking-tight text-ink">
+              Data in eigen beheer
+            </h2>
+          </div>
+          <p className="mt-4 max-w-3xl text-pretty leading-relaxed text-ink/65">
+            Je systemen draaien standaard op infrastructuur binnen de EU (Vercel en
+            een EU-database). Je data blijft te allen tijde jouw eigendom, staat op
+            één plek in plaats van versnipperd over externe SaaS-clouds, en is op elk
             moment exporteerbaar. Geen vendor lock-in. On-premise hosting kan tegen
             meerprijs, als jullie compliance dat vraagt.
           </p>

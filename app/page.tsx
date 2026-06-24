@@ -8,7 +8,7 @@ import { FlowTransform } from "@/components/flow-transform";
 import { SectorFilter } from "@/components/sector-filter";
 import { AvgSection } from "@/components/avg-section";
 import { CtaBand } from "@/components/cta-band";
-import { capabilities, problems, roles, comparison, swvCase } from "@/lib/site";
+import { capabilities, problems, roles, comparison, ownership, swvCase } from "@/lib/site";
 
 const heroStats = [
   { value: "50–500", label: "gebruikers in één portaal" },
@@ -308,6 +308,31 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ───────────────── In eigen beheer ───────────────── */}
+      <Section>
+        <SectionHeading
+          eyebrow="In eigen beheer"
+          eyebrowIcon="lock"
+          title="Jouw data, jouw code, jouw regie."
+          lead="Het grootste verschil met een stapel SaaS-abonnementen: je bent eigenaar. Je gegevens en je software zitten niet gegijzeld bij externe leveranciers."
+        />
+        <div className="mt-14 grid gap-4 sm:grid-cols-3">
+          {ownership.map((o, i) => (
+            <Reveal
+              key={o.title}
+              delay={i * 80}
+              className="rounded-2xl border border-ink/8 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-card"
+            >
+              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-ink text-white">
+                <Icon name={o.icon as never} className="h-6 w-6" />
+              </span>
+              <h3 className="mt-5 text-lg font-semibold tracking-tight text-ink">{o.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/60">{o.body}</p>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
 
       {/* ───────────────── Final CTA ───────────────── */}
       <CtaBand />

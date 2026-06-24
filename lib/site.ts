@@ -116,6 +116,25 @@ export const capabilities: {
   },
 ];
 
+/** Eigenaarschap — data en code in eigen beheer, geen vendor lock-in. */
+export const ownership: { icon: string; title: string; body: string }[] = [
+  {
+    icon: "database",
+    title: "Data in eigen beheer",
+    body: "Al je gegevens op één plek, gehost in de EU en op elk moment exporteerbaar. Niet versnipperd over tien externe clouds van softwareleveranciers.",
+  },
+  {
+    icon: "code",
+    title: "Eigen code",
+    body: "De maatwerk-software is van jou. Ik bouw en beheer het — met escrow als optie — maar je zit nergens aan vast.",
+  },
+  {
+    icon: "lock",
+    title: "Geen vendor lock-in",
+    body: "Geen leverancier die de prijs opschroeft of de stekker eruit trekt. Jij houdt de regie over je systemen én je data.",
+  },
+];
+
 /** Sectoren die ik bedien — gebruikt door de sector-filter én de detailpagina's. */
 export type Sector = {
   slug: string;
@@ -310,6 +329,7 @@ export const aanpakFaq: { q: string; a: string }[] = [
   { q: "Doe je alleen branche-verenigingen?", a: "Nee. Branche, retail, klusplatformen, horeca en dienstverlening — het patroon is altijd hetzelfde: van handmatig werk naar één portaal. De kern is universeel, de modules zijn sector-specifiek." },
   { q: "Hoe lang duurt de implementatie?", a: "Doorgaans 8 tot 12 weken, afhankelijk van de scope en het aantal integraties. Geen big bang: een gefaseerd traject met steeds een werkend tussenresultaat." },
   { q: "Wat als jij ermee stopt?", a: "De code blijft eigendom van de klant (escrow als optie) en de verwerkersovereenkomst regelt de overdracht. Geen vendor lock-in." },
+  { q: "Van wie is mijn data?", a: "Altijd van jou. Je gegevens staan op één plek, gehost in de EU, en zijn op elk moment exporteerbaar. Geen versnippering over externe SaaS-clouds en geen lock-in — je houdt je data volledig in eigen beheer." },
   { q: "Wat als we extra wensen hebben?", a: "Klein valt binnen het onderhoud. Groter werk gaat tegen een transparant uurtarief van €95–€125, vooraf afgestemd." },
   { q: "Kan het op onze eigen servers draaien?", a: "Standaard draait het op Vercel en een EU-database. On-premise kan tegen meerprijs." },
   { q: "Hoe is AVG geregeld?", a: "Verwerkersovereenkomst, verwerkingsregister, audit-log en automatische retentie zitten standaard in het portaal. Dat bespaart al snel €5.000–€15.000 aan externe consultancy." },
