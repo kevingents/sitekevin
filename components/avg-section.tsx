@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Eyebrow } from "@/components/section";
 import { Icon, type IconName } from "@/components/icon";
 import { ButtonLink } from "@/components/ui/button";
@@ -30,19 +29,7 @@ const pillars: { icon: IconName; title: string; body: string }[] = [
 export function AvgSection() {
   return (
     <section className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
-      <Image
-        src="/generated/hero-abstract.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        className="absolute inset-0 object-cover opacity-50"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-ink via-ink/85 to-ink/40"
-        aria-hidden="true"
-      />
-      <div className="bg-dot-grid absolute inset-0 opacity-60" aria-hidden="true" />
+      <div className="bg-dot-grid absolute inset-0 opacity-70" aria-hidden="true" />
       <div
         className="absolute -left-32 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-brand/20 blur-3xl"
         aria-hidden="true"

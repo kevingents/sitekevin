@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Section, SectionHeading, Eyebrow } from "@/components/section";
@@ -130,21 +129,6 @@ export default function SectorDetailPage({ params }: { params: { slug: string } 
             ))}
           </div>
 
-          {/* Sfeerbeeld */}
-          <figure className="mt-10">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-ink/10 shadow-card">
-              <Image
-                src={`/generated/sector-${sector.slug}.jpg`}
-                alt={`Sfeerbeeld voor ${sector.name.toLowerCase()}`}
-                fill
-                sizes="(max-width: 1024px) 100vw, 1024px"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="mt-3 text-center text-xs text-ink/40">
-              Sfeerbeeld — illustratief, geen schermafbeelding van het portaal.
-            </figcaption>
-          </figure>
         </div>
       </section>
 
