@@ -97,6 +97,23 @@ export default function AanpakPage() {
             </Reveal>
           ))}
         </div>
+
+        <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-brand/20 bg-brand-50/50 p-6 sm:flex-row sm:items-center sm:p-7">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white text-brand-600 shadow-sm">
+            <Icon name="credit-card" className="h-6 w-6" />
+          </span>
+          <div>
+            <h3 className="text-base font-semibold tracking-tight text-ink">
+              Geen stapel maandabonnementen meer
+            </h3>
+            <p className="mt-1 text-sm leading-relaxed text-ink/65">
+              Eén maatwerk-oplossing vervangt zes tot acht losse SaaS-abonnementen.
+              Je betaalt een eenmalige projectprijs en een vast, lager onderhoud — in
+              plaats van eindeloze licentiekosten per gebruiker per maand. Je bent
+              eigenaar, geen huurder.
+            </p>
+          </div>
+        </div>
       </Section>
 
       {/* Wat bepaalt de prijs */}

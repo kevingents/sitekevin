@@ -58,6 +58,11 @@ export const problems: { title: string; body: string; icon: string }[] = [
     title: "Excel als vangnet",
     body: "Voor alles wat de systemen niet doen draait een los Excel-bestand. Eén verkeerde cel en het klopt niet meer.",
   },
+  {
+    icon: "credit-card",
+    title: "Stapel abonnementen",
+    body: "Je betaalt elke maand aan zes tot acht softwareleveranciers — vaak voor tools die je maar half gebruikt en die niet met elkaar praten.",
+  },
 ];
 
 /** De rollen die in één portaal samenkomen (typisch 3–4). */
@@ -106,8 +111,8 @@ export const capabilities: {
   {
     icon: "layout-dashboard",
     title: "Handmatig werk vervangen",
-    body: "Van Excel, Outlook-mapjes en losse tools naar één werkende stack die meedenkt, signaleert en automatiseert.",
-    examples: ["Workflows & signalering", "Automatische facturatie", "Eén bron van waarheid"],
+    body: "Van Excel, Outlook-mapjes en een stapel losse abonnementen naar één werkende stack die meedenkt, signaleert en automatiseert. Je eigen software in plaats van eindeloze licentiekosten.",
+    examples: ["Workflows & signalering", "Automatische facturatie", "Minder abonnementen"],
   },
 ];
 
@@ -286,7 +291,7 @@ export const comparison: {
 }[] = [
   { label: "Excel / Outlook", price: "€0", note: "maar het kost je elke week tijd en zekerheid", tone: "muted" },
   { label: "Standaard SaaS", price: "€5–50 p/gebruiker p/m", note: "snel, maar beperkt aanpasbaar — je betaalt voor wat je niet gebruikt" },
-  { label: "Maatwerk portaal", price: "Projectprijs op maat", note: "volledig op maat, AVG uit de doos, eigenaar van eigen code", highlight: true, tone: "brand" },
+  { label: "Maatwerk software", price: "Projectprijs op maat", note: "volledig op maat, eigen code, AVG uit de doos — en geen stapel maandabonnementen meer", highlight: true, tone: "brand" },
   { label: "Middleware (Mendix / OutSystems)", price: "€50–150k licentie", note: "+ integratiekosten en vendor lock-in" },
   { label: "Custom enterprise dev", price: "€200k+", note: "12–24 maanden doorlooptijd" },
 ];

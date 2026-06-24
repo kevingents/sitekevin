@@ -57,13 +57,15 @@ export function RoiCalculator() {
   const [gebruikers, setGebruikers] = useState(150);
   const [uren, setUren] = useState(25);
   const [uurloon, setUurloon] = useState(45);
+  const [abonnement, setAbonnement] = useState(750);
 
   const r = useMemo(() => {
     const tijdJaar = uren * uurloon * WERKWEKEN;
     const foutJaar = gebruikers * FOUT_PER_GEBRUIKER;
-    const totaal = tijdJaar + foutJaar;
-    return { tijdJaar, foutJaar, totaal };
-  }, [gebruikers, uren, uurloon]);
+    const abonnementJaar = abonnement * 12;
+    const totaal = tijdJaar + foutJaar + abonnementJaar;
+    return { tijdJaar, foutJaar, abonnementJaar, totaal };
+  }, [gebruikers, uren, uurloon, abonnement]);
 
   return (
     <div className="overflow-hidden rounded-[2rem] border border-ink/10 bg-white shadow-card-lg">
@@ -107,12 +109,21 @@ export function RoiCalculator() {
               onChange={setUurloon}
               format={(v) => eur.format(v)}
             />
+            <Slider
+              label="Software-abonnementen nu / maand"
+              value={abonnement}
+              min={0}
+              max={2500}
+              step={50}
+              onChange={setAbonnement}
+              format={(v) => eur.format(v)}
+            />
           </div>
 
           <div className="mt-7 flex items-start gap-2 rounded-xl bg-bone-200/60 px-4 py-3 text-xs leading-relaxed text-ink/55">
             <Icon name="check-circle" className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
-            Gebaseerd op {WERKWEKEN} werkweken per jaar, plus een indicatieve
-            foutreductie in salaris en facturatie.
+            Gebaseerd op {WERKWEKEN} werkweken per jaar, plus de software-abonnementen
+            die je vervangt en een indicatieve foutreductie.
           </div>
         </div>
 
@@ -129,7 +140,7 @@ export function RoiCalculator() {
               <div className="mt-1 text-4xl font-semibold tracking-tight sm:text-5xl">
                 {eur.format(r.totaal)}
               </div>
-              <div className="mt-1 text-xs text-white/45">aan tijd en voorkomen fouten</div>
+              <div className="mt-1 text-xs text-white/45">aan tijd, abonnementen en voorkomen fouten</div>
             </div>
 
             <dl className="mt-7 space-y-3 border-t border-white/10 pt-6 text-sm">
@@ -140,6 +151,10 @@ export function RoiCalculator() {
               <div className="flex items-center justify-between">
                 <dt className="text-white/60">Minder fouten / jaar</dt>
                 <dd className="font-semibold tabular-nums">{eur.format(r.foutJaar)}</dd>
+              </div>
+              <div className="flex items-center justify-between">
+                <dt className="text-white/60">Abonnementen vervangen / jaar</dt>
+                <dd className="font-semibold tabular-nums">{eur.format(r.abonnementJaar)}</dd>
               </div>
               <div className="flex items-center justify-between">
                 <dt className="text-white/60">AVG-consultancy bespaard</dt>

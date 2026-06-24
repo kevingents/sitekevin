@@ -12,6 +12,7 @@ import {
   ChevronDown,
   Clock,
   Code,
+  CreditCard,
   Database,
   FileCheck,
   FileSpreadsheet,
@@ -62,6 +63,7 @@ const ICONS = {
   presentation: Presentation,
   "life-buoy": LifeBuoy,
   code: Code,
+  "credit-card": CreditCard,
   // UI
   "arrow-right": ArrowRight,
   "arrow-up-right": ArrowUpRight,
