@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Section, SectionHeading, Eyebrow } from "@/components/section";
@@ -129,25 +130,21 @@ export default function SectorDetailPage({ params }: { params: { slug: string } 
             ))}
           </div>
 
-          {/* Screenshots / mockup placeholder */}
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            {[0, 1].map((n) => (
-              <div
-                key={n}
-                className="overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-card"
-              >
-                <div className="relative aspect-[16/10] bg-gradient-to-br from-bone-200 to-white">
-                  <div className="bg-dot-grid-ink absolute inset-0" aria-hidden="true" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-ink/35">
-                    <Icon name="layout-dashboard" className="h-8 w-8" />
-                    <span className="text-xs font-medium uppercase tracking-wide">
-                      Voorbeeld volgt
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Sfeerbeeld */}
+          <figure className="mt-10">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-ink/10 shadow-card">
+              <Image
+                src={`/generated/sector-${sector.slug}.jpg`}
+                alt={`Sfeerbeeld voor ${sector.name.toLowerCase()}`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-center text-xs text-ink/40">
+              Sfeerbeeld — illustratief, geen schermafbeelding van het portaal.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
