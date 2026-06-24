@@ -4,8 +4,8 @@
  */
 
 export const site = {
-  name: "Willie",
-  shortName: "Willie",
+  name: "Willie.",
+  shortName: "Willie.",
   // Officiële naam voor KvK, contracten en juridische pagina's
   legalName: "Kevin van Willigenburg",
   product: "Maatwerk software",
@@ -136,6 +136,19 @@ export const ownership: { icon: string; title: string; body: string }[] = [
     body: "Geen leverancier die de prijs opschroeft of de stekker eruit trekt. Jij houdt de regie over je systemen én je data.",
   },
 ];
+
+/**
+ * Concrete software — wat we typisch koppelen (houden & verbinden) en wat we
+ * typisch vervangen (maatwerk neemt het over → abonnement opzeggen).
+ * Per situatie verschillend; dit zijn voorbeelden.
+ */
+export const softwareStack: {
+  koppelen: string[];
+  vervangen: string[];
+} = {
+  koppelen: ["Shopify", "Exact", "AFAS", "Cleverdesk", "DocuSign", "Microsoft 365"],
+  vervangen: ["Spotler", "Mailchimp", "Channable", "Mailblue", "Losse Excel-sheets", "Los CRM-pakket"],
+};
 
 /** Sectoren die ik bedien — gebruikt door de sector-filter én de detailpagina's. */
 export type Sector = {

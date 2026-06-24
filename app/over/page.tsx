@@ -83,8 +83,9 @@ export default function OverPage() {
           <div className="flex flex-col gap-10">
             <Reveal className="space-y-4 text-pretty text-lg leading-relaxed text-ink/70">
               <p>
-                Ik ben Willie — officieel Kevin van Willigenburg, maar iedereen noemt
-                me Willie. Software developer en ZZP&apos;er. Ik bouw maatwerk software
+                Ik ben Willie — mét de punt, zo heet het merk. Officieel Kevin van
+                Willigenburg, maar iedereen noemt me Willie. Software developer en
+                ZZP&apos;er. Ik bouw maatwerk software
                 én koppel bestaande systemen voor organisaties die nog met Excel,
                 Outlook-mapjes en losse tools werken. Soms is dat een portaal, soms een
                 kassa met webshop en omnichannel, en vaak de koppeling die alles met

@@ -6,6 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { PortalShowcase } from "@/components/portal-showcase";
 import { FlowTransform } from "@/components/flow-transform";
 import { SectorFilter } from "@/components/sector-filter";
+import { SoftwareStack } from "@/components/software-stack";
 import { AvgSection } from "@/components/avg-section";
 import { CtaBand } from "@/components/cta-band";
 import { capabilities, problems, roles, comparison, ownership, swvCase } from "@/lib/site";
@@ -115,6 +116,23 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
+      </Section>
+
+      {/* ───────────────── Software: koppelen of vervangen ───────────────── */}
+      <Section className="py-20 sm:py-24">
+        <SectionHeading
+          eyebrow="Koppelen of vervangen"
+          eyebrowIcon="plug"
+          title="Welke software we koppelen — en welke we vervangen."
+          lead="De systemen die je houdt, verbinden we. De losse abonnementen die elke maand geld kosten — denk aan Spotler, Mailchimp of Channable — neemt maatwerk over, zodat je ze opzegt. Wat in welke bak hoort, bepalen we samen."
+        />
+        <div className="mt-12">
+          <SoftwareStack />
+        </div>
+        <p className="mt-6 text-center text-xs text-ink/45">
+          Voorbeelden — de juiste keuze (koppelen of vervangen) verschilt per situatie
+          en stack.
+        </p>
       </Section>
 
       {/* ───────────────── Sector-filter ───────────────── */}
