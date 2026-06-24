@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Over",
   description:
-    "Over Kevin van Willigenburg — software developer gespecialiseerd in maatwerk webportalen voor MKB-bedrijven die nog met Excel en losse systemen werken.",
+    "Over Willie (Kevin van Willigenburg) — software developer gespecialiseerd in maatwerk software voor MKB-bedrijven die nog met Excel en losse systemen werken.",
 };
 
 const principles: { icon: IconName; title: string; body: string }[] = [
@@ -55,7 +55,7 @@ export default function OverPage() {
                 <div className="bg-dot-grid absolute inset-0 opacity-60" aria-hidden="true" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/40">
                   <span className="grid h-16 w-16 place-items-center rounded-2xl bg-white/10 text-2xl font-bold text-white/70">
-                    KvW
+                    W
                   </span>
                   <span className="text-xs font-medium uppercase tracking-wide">Foto volgt</span>
                 </div>
@@ -63,7 +63,7 @@ export default function OverPage() {
               <div className="p-6">
                 <div className="text-lg font-semibold tracking-tight text-ink">{site.name}</div>
                 <div className="mt-0.5 text-sm text-ink/55">
-                  Software developer · branche-portalen
+                  {site.legalName} · maatwerk software
                 </div>
                 <div className="mt-4 flex flex-col gap-2 text-sm text-ink/65">
                   <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 hover:text-brand-600">
@@ -83,11 +83,12 @@ export default function OverPage() {
           <div className="flex flex-col gap-10">
             <Reveal className="space-y-4 text-pretty text-lg leading-relaxed text-ink/70">
               <p>
-                Ik ben Kevin — software developer en ZZP&apos;er. Ik bouw maatwerk
-                software én koppel bestaande systemen voor organisaties die nog met
-                Excel, Outlook-mapjes en losse tools werken. Soms is dat een portaal,
-                soms een kassa met webshop en omnichannel, en vaak de koppeling die
-                alles met elkaar laat samenwerken.
+                Ik ben Willie — officieel Kevin van Willigenburg, maar iedereen noemt
+                me Willie. Software developer en ZZP&apos;er. Ik bouw maatwerk software
+                én koppel bestaande systemen voor organisaties die nog met Excel,
+                Outlook-mapjes en losse tools werken. Soms is dat een portaal, soms een
+                kassa met webshop en omnichannel, en vaak de koppeling die alles met
+                elkaar laat samenwerken.
               </p>
               <p>
                 Mijn werk loopt van een BBL-portaal dat de complete administratie van

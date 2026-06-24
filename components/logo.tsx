@@ -23,10 +23,10 @@ export function Logo({
       <span
         className={cn(
           "relative grid h-9 w-9 place-items-center rounded-xl text-sm font-bold tracking-tight transition-transform duration-200 group-hover:-translate-y-0.5",
-          "bg-gradient-to-br from-brand to-brand-600 text-white shadow-glow",
+          "bg-gradient-to-br from-brand to-brand-600 text-base text-white shadow-glow",
         )}
       >
-        KvW
+        W
         <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-emerald-400 ring-2 ring-white" />
       </span>
       <span className="flex flex-col leading-none">

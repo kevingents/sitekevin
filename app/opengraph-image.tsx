@@ -52,7 +52,7 @@ export default function OpengraphImage() {
               justifyContent: "center",
             }}
           >
-            KvW
+            W
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ color: "white", fontSize: 30, fontWeight: 600 }}>{site.name}</span>

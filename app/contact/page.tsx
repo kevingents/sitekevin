@@ -125,8 +125,12 @@ export default function ContactPage() {
                 <h2 className="text-sm font-semibold tracking-tight text-white/90">Bedrijfsgegevens</h2>
                 <dl className="mt-4 space-y-2 text-sm text-white/60">
                   <div className="flex justify-between gap-4">
-                    <dt>Naam</dt>
+                    <dt>Handelsnaam</dt>
                     <dd className="text-right text-white/85">{site.name}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt>Naam</dt>
+                    <dd className="text-right text-white/85">{site.legalName}</dd>
                   </div>
                   <div className="flex justify-between gap-4">
                     <dt>KvK</dt>

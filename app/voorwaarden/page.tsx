@@ -14,7 +14,7 @@ const sections: LegalSection[] = [
   {
     heading: "Definities",
     paragraphs: [
-      `In deze voorwaarden betekent "opdrachtnemer" ${site.name} (${site.kvk}), en "opdrachtgever" de partij die een opdracht verstrekt. "Opdracht" is de overeengekomen levering van een maatwerk portaal en/of bijbehorende diensten.`,
+      `In deze voorwaarden betekent "opdrachtnemer" ${site.name} (handelsnaam van ${site.legalName}, ${site.kvk}), en "opdrachtgever" de partij die een opdracht verstrekt. "Opdracht" is de overeengekomen levering van maatwerk software en/of bijbehorende diensten.`,
     ],
   },
   {

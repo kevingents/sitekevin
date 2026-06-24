@@ -1,4 +1,4 @@
-# Kevin van Willigenburg — ZZP-site
+# Willie — ZZP-site (Kevin van Willigenburg)
 
 Verkoopsite voor branche-portalen (BBL-administratie voor branche-verenigingen).
 Next.js 14 (App Router) · TypeScript · Tailwind CSS · Resend.
@@ -21,7 +21,7 @@ De site draait op http://localhost:3000.
 | Variabele | Verplicht | Uitleg |
 |---|---|---|
 | `RESEND_API_KEY` | voor mail | API-key van [resend.com](https://resend.com) (gratis tier: 100 mails/dag). |
-| `RESEND_FROM_EMAIL` | voor mail | Afzender, bv. `Kevin <kevin@jouwdomein.nl>`. Domein moet geverifieerd zijn in Resend. |
+| `RESEND_FROM_EMAIL` | voor mail | Afzender, bv. `Willie <hallo@jouwdomein.nl>`. Domein moet geverifieerd zijn in Resend. |
 | `CONTACT_TO_EMAIL` | nee | Waar inzendingen heen gaan. Default: `kevin@gents.nl`. |
 | `NEXT_PUBLIC_SITE_URL` | aanrader | Volledige URL voor canonical/OG/sitemap. |
 | `NEXT_PUBLIC_CAL_LINK` | nee | Cal.com pad (bv. `kevin/kennismaking`) — toont de planner op /contact. |

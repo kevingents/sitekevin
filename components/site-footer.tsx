@@ -89,11 +89,12 @@ export function SiteFooter() {
           <div>
             <h3 className="text-sm font-semibold text-white/90">Bedrijf</h3>
             <ul className="mt-4 space-y-2.5 text-sm text-white/55">
+              <li>{site.legalName}</li>
               <li>{site.kvk}</li>
               <li>{site.btw}</li>
               <li>
                 <Link href="/over" className="transition-colors hover:text-white">
-                  Over Kevin
+                  Over Willie
                 </Link>
               </li>
             </ul>

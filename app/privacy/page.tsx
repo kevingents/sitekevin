@@ -15,7 +15,7 @@ const sections: LegalSection[] = [
   {
     heading: "Wie verwerkt je gegevens",
     paragraphs: [
-      `${site.name} (${site.kvk}, ${site.btw}) is verantwoordelijk voor de verwerking van persoonsgegevens via deze website. Vragen kun je stellen via ${site.email}.`,
+      `${site.name} (handelsnaam van ${site.legalName}, ${site.kvk}, ${site.btw}) is verantwoordelijk voor de verwerking van persoonsgegevens via deze website. Vragen kun je stellen via ${site.email}.`,
     ],
   },
   {

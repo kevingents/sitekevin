@@ -4,8 +4,10 @@
  */
 
 export const site = {
-  name: "Kevin van Willigenburg",
-  shortName: "KvW",
+  name: "Willie",
+  shortName: "Willie",
+  // Officiële naam voor KvK, contracten en juridische pagina's
+  legalName: "Kevin van Willigenburg",
   product: "Maatwerk software",
   tagline: "Maatwerk software die handmatig werk vervangt",
   description:
