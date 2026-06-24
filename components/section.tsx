@@ -84,18 +84,23 @@ export function SectionHeading({
   );
 }
 
-/** Standaard sectie-spacing wrapper. */
+/** Standaard sectie-spacing wrapper. `tone="tint"` geeft de subtiele bone-band. */
 export function Section({
   children,
   className,
   id,
+  tone = "plain",
 }: {
   children: ReactNode;
   className?: string;
   id?: string;
+  tone?: "plain" | "tint";
 }) {
   return (
-    <section id={id} className={cn("py-20 sm:py-28", className)}>
+    <section
+      id={id}
+      className={cn("py-20 sm:py-28", tone === "tint" && "bg-bone-200/50", className)}
+    >
       <div className="container-page">{children}</div>
     </section>
   );

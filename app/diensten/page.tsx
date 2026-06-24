@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { Section, SectionHeading } from "@/components/section";
 import { Reveal } from "@/components/reveal";
@@ -88,6 +89,15 @@ export default function DienstenPage() {
                 <span className="text-xs uppercase tracking-wide text-ink/40">Prijs</span>
                 <span className="text-sm font-semibold text-ink">{s.price}</span>
               </div>
+              {s.title === "Systemen koppelen" ? (
+                <Link
+                  href="/diensten/koppelen"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700"
+                >
+                  Meer over koppelen
+                  <Icon name="arrow-right" className="h-4 w-4" />
+                </Link>
+              ) : null}
             </Reveal>
           ))}
         </div>

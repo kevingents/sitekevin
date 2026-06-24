@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CookieBanner } from "@/components/cookie-banner";
+import { StickyCta } from "@/components/sticky-cta";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -89,6 +90,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <StickyCta />
         <CookieBanner />
       </body>
     </html>

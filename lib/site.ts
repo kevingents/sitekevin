@@ -152,6 +152,16 @@ export const softwareStack: {
   vervangen: ["Spotler", "Mailchimp", "Channable", "Mailblue", "Losse Excel-sheets", "Los CRM-pakket"],
 };
 
+/** Veelvoorkomende koppelingen — voor de /diensten/koppelen landingspagina. */
+export const integrationExamples: { icon: string; title: string; body: string }[] = [
+  { icon: "building-2", title: "Kassa ↔ webshop ↔ voorraad", body: "Eén realtime voorraad over winkel en online, en bestellingen die automatisch doorlopen tussen kanalen." },
+  { icon: "database", title: "Exact of AFAS koppelen", body: "Facturen, klanten en uren synchroon met je boekhouding — geen dubbele invoer, geen overtypen." },
+  { icon: "file-check", title: "DocuSign & e-mail", body: "Contracten tekenen en versturen vanuit het portaal, met alles automatisch in het dossier." },
+  { icon: "briefcase", title: "HR & salaris", body: "Gewerkte uren stromen automatisch door naar de salarisadministratie, zonder handwerk." },
+  { icon: "plug", title: "Cleverdesk / Synergy", body: "Je bestaande systemen van waarheid blijven staan; ik koppel ze aan het portaal." },
+  { icon: "code", title: "Custom API's", body: "Heeft je leverancier een API? Dan bouw ik de koppeling op maat — ook voor niche-software." },
+];
+
 /** Sectoren die ik bedien — gebruikt door de sector-filter én de detailpagina's. */
 export type Sector = {
   slug: string;

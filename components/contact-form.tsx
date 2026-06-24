@@ -18,10 +18,24 @@ const field =
   "w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink shadow-sm transition-colors placeholder:text-ink/35 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30";
 const labelCls = "mb-1.5 block text-sm font-medium text-ink/70";
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate(d: Record<string, FormDataEntryValue>) {
+  const e: Record<string, string> = {};
+  if (!String(d.naam ?? "").trim()) e.naam = "Vul je naam in.";
+  if (!String(d.bedrijf ?? "").trim()) e.bedrijf = "Vul je organisatie in.";
+  const email = String(d.email ?? "").trim();
+  if (!email) e.email = "Vul je e-mailadres in.";
+  else if (!EMAIL_RE.test(email)) e.email = "Dit lijkt geen geldig e-mailadres.";
+  if (!String(d.bericht ?? "").trim()) e.bericht = "Schrijf een kort bericht.";
+  return e;
+}
+
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
   const [onderwerp, setOnderwerp] = useState("demo");
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const successRef = useRef<HTMLHeadingElement>(null);
 
   // Verplaats focus naar de bevestiging zodra het bericht verstuurd is
@@ -36,6 +50,19 @@ export function ContactForm() {
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+
+    const errs = validate(data);
+    if (Object.keys(errs).length > 0) {
+      setFieldErrors(errs);
+      setStatus("idle");
+      const first = ["naam", "bedrijf", "email", "bericht"].find((k) => errs[k]);
+      if (first) {
+        const el = form.elements.namedItem(first);
+        if (el instanceof HTMLElement) el.focus();
+      }
+      return;
+    }
+    setFieldErrors({});
 
     try {
       const res = await fetch("/api/contact", {
@@ -55,6 +82,19 @@ export function ContactForm() {
       setError(err instanceof Error ? err.message : "Er ging iets mis. Probeer het later opnieuw.");
     }
   }
+
+  const fieldCls = (name: string) =>
+    cn(field, fieldErrors[name] && "border-brand focus:border-brand focus:ring-brand/30");
+  const ariaInvalid = (name: string) => ({
+    "aria-invalid": fieldErrors[name] ? true : undefined,
+    "aria-describedby": fieldErrors[name] ? `${name}-error` : undefined,
+  });
+  const errFor = (name: string) =>
+    fieldErrors[name] ? (
+      <p id={`${name}-error`} className="mt-1.5 text-xs font-medium text-brand-600">
+        {fieldErrors[name]}
+      </p>
+    ) : null;
 
   if (status === "success") {
     return (
@@ -85,7 +125,15 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-3xl border border-ink/10 bg-white p-6 shadow-card sm:p-8">
+    <form
+      onSubmit={onSubmit}
+      noValidate
+      onChange={(e) => {
+        const name = (e.target as HTMLInputElement | HTMLTextAreaElement).name;
+        if (name) setFieldErrors((prev) => (prev[name] ? { ...prev, [name]: "" } : prev));
+      }}
+      className="rounded-3xl border border-ink/10 bg-white p-6 shadow-card sm:p-8"
+    >
       {/* Honeypot tegen bots */}
       <input
         type="text"
@@ -101,19 +149,22 @@ export function ContactForm() {
           <label htmlFor="naam" className={labelCls}>
             Naam <span className="text-brand">*</span>
           </label>
-          <input id="naam" name="naam" type="text" required autoComplete="name" className={field} placeholder="Voor- en achternaam" />
+          <input id="naam" name="naam" type="text" required autoComplete="name" className={fieldCls("naam")} {...ariaInvalid("naam")} placeholder="Voor- en achternaam" />
+          {errFor("naam")}
         </div>
         <div>
           <label htmlFor="bedrijf" className={labelCls}>
             Organisatie <span className="text-brand">*</span>
           </label>
-          <input id="bedrijf" name="bedrijf" type="text" required autoComplete="organization" className={field} placeholder="Vereniging of bedrijf" />
+          <input id="bedrijf" name="bedrijf" type="text" required autoComplete="organization" className={fieldCls("bedrijf")} {...ariaInvalid("bedrijf")} placeholder="Vereniging of bedrijf" />
+          {errFor("bedrijf")}
         </div>
         <div>
           <label htmlFor="email" className={labelCls}>
             E-mail <span className="text-brand">*</span>
           </label>
-          <input id="email" name="email" type="email" required autoComplete="email" className={field} placeholder="naam@organisatie.nl" />
+          <input id="email" name="email" type="email" required autoComplete="email" className={fieldCls("email")} {...ariaInvalid("email")} placeholder="naam@organisatie.nl" />
+          {errFor("email")}
         </div>
         <div>
           <label htmlFor="telefoon" className={labelCls}>
@@ -175,9 +226,11 @@ export function ContactForm() {
           name="bericht"
           required
           rows={5}
-          className={cn(field, "resize-y")}
+          {...ariaInvalid("bericht")}
+          className={cn(fieldCls("bericht"), "resize-y")}
           placeholder="Vertel kort over jullie situatie: hoeveel gebruikers of locaties, welke systemen je nu gebruikt, en wat je zoekt."
         />
+        {errFor("bericht")}
       </div>
 
       {status === "error" ? (

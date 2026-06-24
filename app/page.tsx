@@ -88,7 +88,7 @@ export default function HomePage() {
       </section>
 
       {/* ───────────────── Wat ik doe (3 poten) ───────────────── */}
-      <Section className="py-16 sm:py-20">
+      <Section tone="tint">
         <SectionHeading
           eyebrow="Wat ik doe"
           eyebrowIcon="sparkles"
@@ -123,7 +123,7 @@ export default function HomePage() {
       </Section>
 
       {/* ───────────────── Software: koppelen of vervangen ───────────────── */}
-      <Section className="py-20 sm:py-24">
+      <Section>
         <SectionHeading
           eyebrow="Koppelen of vervangen"
           eyebrowIcon="plug"
@@ -140,19 +140,17 @@ export default function HomePage() {
       </Section>
 
       {/* ───────────────── Sector-filter ───────────────── */}
-      <section className="bg-bone-200/50 py-20 sm:py-24">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="Welke sector ben jij?"
-            eyebrowIcon="layout-dashboard"
-            title="Eén patroon, vijf sectoren."
-            lead="Branche, retail, klus, horeca of dienstverlening — de kern is altijd hetzelfde: van handmatig werk naar één portaal. Kies je sector en zie wat dat oplost."
-          />
-          <div className="mt-12">
-            <SectorFilter />
-          </div>
+      <Section tone="tint">
+        <SectionHeading
+          eyebrow="Welke sector ben jij?"
+          eyebrowIcon="layout-dashboard"
+          title="Eén patroon, vijf sectoren."
+          lead="Branche, retail, klus, horeca of dienstverlening — de kern is altijd hetzelfde: van handmatig werk naar één portaal. Kies je sector en zie wat dat oplost."
+        />
+        <div className="mt-12">
+          <SectorFilter />
         </div>
-      </section>
+      </Section>
 
       {/* ───────────────── Probleem ───────────────── */}
       <Section>
@@ -200,40 +198,38 @@ export default function HomePage() {
       </Section>
 
       {/* ───────────────── Oplossing ───────────────── */}
-      <section className="bg-bone-200/50 py-20 sm:py-28">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="De oplossing"
-            eyebrowIcon="layout-dashboard"
-            title="Eén systeem voor jouw mensen."
-            lead="Iedere rol ziet precies wat relevant is — maar het is dezelfde data, hetzelfde dossier, dezelfde waarheid. Geen overtypen, geen versieverwarring."
-          />
+      <Section tone="tint">
+        <SectionHeading
+          eyebrow="De oplossing"
+          eyebrowIcon="layout-dashboard"
+          title="Eén systeem voor jouw mensen."
+          lead="Iedere rol ziet precies wat relevant is — maar het is dezelfde data, hetzelfde dossier, dezelfde waarheid. Geen overtypen, geen versieverwarring."
+        />
 
-          <div className="mt-14 grid gap-4 sm:grid-cols-2">
-            {roles.map((r, i) => (
-              <Reveal
-                key={r.title}
-                delay={i * 80}
-                className="flex gap-5 rounded-2xl border border-ink/8 bg-white p-6 shadow-sm transition-all hover:shadow-card sm:p-7"
-              >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-ink to-ink-700 text-white">
-                  <Icon name={r.icon as never} className="h-6 w-6" />
-                </span>
-                <div>
-                  <h3 className="text-lg font-semibold tracking-tight text-ink">{r.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink/60">{r.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <ButtonLink href="/diensten" variant="secondary" size="md" iconRight="arrow-right">
-              Bekijk wat ik aanbied
-            </ButtonLink>
-          </div>
+        <div className="mt-14 grid gap-4 sm:grid-cols-2">
+          {roles.map((r, i) => (
+            <Reveal
+              key={r.title}
+              delay={i * 80}
+              className="flex gap-5 rounded-2xl border border-ink/8 bg-white p-6 shadow-sm transition-all hover:shadow-card sm:p-7"
+            >
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-ink to-ink-700 text-white">
+                <Icon name={r.icon as never} className="h-6 w-6" />
+              </span>
+              <div>
+                <h3 className="text-lg font-semibold tracking-tight text-ink">{r.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink/60">{r.body}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
-      </section>
+
+        <div className="mt-10 text-center">
+          <ButtonLink href="/diensten" variant="secondary" size="md" iconRight="arrow-right">
+            Bekijk wat ik aanbied
+          </ButtonLink>
+        </div>
+      </Section>
 
       {/* ───────────────── AVG ───────────────── */}
       <AvgSection />
@@ -291,45 +287,43 @@ export default function HomePage() {
       </Section>
 
       {/* ───────────────── Aanpak-teaser ───────────────── */}
-      <section className="bg-bone-200/50 py-20 sm:py-24">
-        <div className="container-page">
-          <div className="flex flex-col items-start justify-between gap-8 rounded-[2rem] border border-ink/8 bg-white p-8 shadow-card sm:p-12 lg:flex-row lg:items-center">
-            <div className="max-w-xl">
-              <Eyebrow icon="trending-up">Wat het kost</Eyebrow>
-              <h2 className="mt-4 text-balance text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-                Goedkoper dan middleware, sneller dan enterprise-development.
-              </h2>
-              <p className="mt-3 text-pretty leading-relaxed text-ink/65">
-                Geen vaste prijslijst, want elk project is anders. Wel volledige
-                transparantie over waar de prijs tussen staat en wat hem bepaalt.
-                Reken zelf je besparing uit met de ROI-calculator.
-              </p>
-              <div className="mt-6">
-                <ButtonLink href="/aanpak" size="md" iconRight="arrow-right">
-                  Bekijk de aanpak & ROI
-                </ButtonLink>
-              </div>
-            </div>
-            <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-ink/8 lg:w-auto">
-              {comparison.map((c) => (
-                <div
-                  key={c.label}
-                  className={`flex items-center justify-between gap-4 border-b border-ink/8 px-4 py-3 text-sm last:border-b-0 ${
-                    c.highlight ? "bg-brand-50" : "bg-white"
-                  }`}
-                >
-                  <span className={c.highlight ? "font-semibold text-brand-700" : "text-ink/65"}>
-                    {c.label}
-                  </span>
-                  <span className={c.highlight ? "font-semibold text-brand-700" : "text-ink/45"}>
-                    {c.price}
-                  </span>
-                </div>
-              ))}
+      <Section tone="tint">
+        <div className="flex flex-col items-start justify-between gap-8 rounded-[2rem] border border-ink/8 bg-white p-8 shadow-card sm:p-12 lg:flex-row lg:items-center">
+          <div className="max-w-xl">
+            <Eyebrow icon="trending-up">Wat het kost</Eyebrow>
+            <h2 className="mt-4 text-balance text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+              Goedkoper dan middleware, sneller dan enterprise-development.
+            </h2>
+            <p className="mt-3 text-pretty leading-relaxed text-ink/65">
+              Geen vaste prijslijst, want elk project is anders. Wel volledige
+              transparantie over waar de prijs tussen staat en wat hem bepaalt.
+              Reken zelf je besparing uit met de ROI-calculator.
+            </p>
+            <div className="mt-6">
+              <ButtonLink href="/aanpak" size="md" iconRight="arrow-right">
+                Bekijk de aanpak & ROI
+              </ButtonLink>
             </div>
           </div>
+          <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-ink/8 lg:w-auto">
+            {comparison.map((c) => (
+              <div
+                key={c.label}
+                className={`flex items-center justify-between gap-4 border-b border-ink/8 px-4 py-3 text-sm last:border-b-0 ${
+                  c.highlight ? "bg-brand-50" : "bg-white"
+                }`}
+              >
+                <span className={c.highlight ? "font-semibold text-brand-700" : "text-ink/65"}>
+                  {c.label}
+                </span>
+                <span className={c.highlight ? "font-semibold text-brand-700" : "text-ink/45"}>
+                  {c.price}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-      </section>
+      </Section>
 
       {/* ───────────────── In eigen beheer ───────────────── */}
       <Section>

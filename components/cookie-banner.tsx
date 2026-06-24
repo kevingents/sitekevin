@@ -31,6 +31,8 @@ export function CookieBanner() {
     } catch {
       /* negeren */
     }
+    // Sein de sticky mobiele CTA dat hij mag verschijnen (geen overlap)
+    window.dispatchEvent(new Event("kvw-cookie-consent"));
     setShow(false);
   }
 
