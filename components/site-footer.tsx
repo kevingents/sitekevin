@@ -74,11 +74,13 @@ export function SiteFooter() {
                   {site.email}
                 </a>
               </li>
-              <li>
-                <a className="transition-colors hover:text-white" href={`tel:${site.phoneHref}`}>
-                  {site.phoneDisplay}
-                </a>
-              </li>
+              {site.phoneHref ? (
+                <li>
+                  <a className="transition-colors hover:text-white" href={`tel:${site.phoneHref}`}>
+                    {site.phoneDisplay}
+                  </a>
+                </li>
+              ) : null}
               <li className="flex items-center gap-1.5">
                 <Icon name="map-pin" className="h-3.5 w-3.5 text-white/40" />
                 {site.locatie}
@@ -90,8 +92,8 @@ export function SiteFooter() {
             <h3 className="text-sm font-semibold text-white/90">Bedrijf</h3>
             <ul className="mt-4 space-y-2.5 text-sm text-white/55">
               <li>{site.legalName}</li>
-              <li>{site.kvk}</li>
-              <li>{site.btw}</li>
+              {site.kvk ? <li>{site.kvk}</li> : null}
+              {site.btw ? <li>{site.btw}</li> : null}
               <li>
                 <Link href="/over" className="transition-colors hover:text-white">
                   Over Willie

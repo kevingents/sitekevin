@@ -10,6 +10,7 @@ import { swvCase, gentsCase } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Werk",
+  alternates: { canonical: "/werk" },
   description:
     "Cases: een branchevereniging in de meubelindustrie (BBL-portaal voor 400 studenten) en GENTS (omnichannel retail — kassa, webshop en voorraad als één keten).",
 };

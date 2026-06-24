@@ -11,6 +11,10 @@ import { AvgSection } from "@/components/avg-section";
 import { CtaBand } from "@/components/cta-band";
 import { capabilities, problems, roles, comparison, ownership, swvCase } from "@/lib/site";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 const heroStats = [
   { value: "50–500", label: "gebruikers in één portaal" },
   { value: "6–8", label: "systemen vervangen" },
@@ -60,7 +64,7 @@ export default function HomePage() {
                   Plan kennismaking
                 </ButtonLink>
                 <ButtonLink href="/werk" size="lg" variant="ghost" iconRight="arrow-right">
-                  Bekijk demo
+                  Bekijk het werk
                 </ButtonLink>
               </div>
 
@@ -247,7 +251,7 @@ export default function HomePage() {
               {[
                 "6–8 losse systemen vervangen",
                 "20–40 uur binnendienst bespaard per week",
-                "AVG-dossier volledig op orde",
+                "AVG-register & retentie geautomatiseerd",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-2.5 text-sm text-ink/70">
                   <span className="grid h-5 w-5 place-items-center rounded-full bg-emerald-50 text-emerald-600">

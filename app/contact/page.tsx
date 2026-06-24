@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Plan een vrijblijvende kennismaking of stuur een bericht. Ik reageer doorgaans binnen één werkdag.",
+  alternates: { canonical: "/contact" },
 };
 
 const methods: { icon: IconName; label: string; value: string; href: string; sub: string }[] = [
@@ -18,13 +19,18 @@ const methods: { icon: IconName; label: string; value: string; href: string; sub
     href: `mailto:${site.email}`,
     sub: "Reactie binnen één werkdag",
   },
-  {
-    icon: "message-circle",
-    label: "Telefoon",
-    value: site.phoneDisplay,
-    href: `tel:${site.phoneHref}`,
-    sub: "Op werkdagen tussen 9 en 17 uur",
-  },
+  // Telefoon alleen tonen zodra er een echt nummer is ingevuld
+  ...(site.phoneHref
+    ? [
+        {
+          icon: "message-circle" as IconName,
+          label: "Telefoon",
+          value: site.phoneDisplay,
+          href: `tel:${site.phoneHref}`,
+          sub: "Op werkdagen tussen 9 en 17 uur",
+        },
+      ]
+    : []),
 ];
 
 export default function ContactPage() {
@@ -132,14 +138,18 @@ export default function ContactPage() {
                     <dt>Naam</dt>
                     <dd className="text-right text-white/85">{site.legalName}</dd>
                   </div>
-                  <div className="flex justify-between gap-4">
-                    <dt>KvK</dt>
-                    <dd className="text-right text-white/85">{site.kvk}</dd>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <dt>Btw</dt>
-                    <dd className="text-right text-white/85">{site.btw}</dd>
-                  </div>
+                  {site.kvk ? (
+                    <div className="flex justify-between gap-4">
+                      <dt>KvK</dt>
+                      <dd className="text-right text-white/85">{site.kvk}</dd>
+                    </div>
+                  ) : null}
+                  {site.btw ? (
+                    <div className="flex justify-between gap-4">
+                      <dt>Btw</dt>
+                      <dd className="text-right text-white/85">{site.btw}</dd>
+                    </div>
+                  ) : null}
                 </dl>
               </div>
             </aside>

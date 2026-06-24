@@ -43,13 +43,29 @@ export const metadata: Metadata = {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
   },
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: site.name,
+  legalName: site.legalName,
+  url: site.url,
+  description: site.description,
+  areaServed: "NL",
+  founder: { "@type": "Person", name: site.legalName },
+  knowsAbout: [
+    "maatwerk software",
+    "systeemkoppelingen",
+    "webportalen",
+    "kassa en webshop",
+    "omnichannel retail",
+    "AVG-compliance",
+  ],
 };
 
 export default function RootLayout({
@@ -58,6 +74,10 @@ export default function RootLayout({
   return (
     <html lang="nl" className={inter.variable}>
       <body className="flex min-h-screen flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"

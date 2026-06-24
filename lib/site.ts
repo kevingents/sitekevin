@@ -12,16 +12,18 @@ export const site = {
   tagline: "Maatwerk software die handmatig werk vervangt",
   description:
     "Ik bouw eigen systemen — portalen, kassa's, webshops en omnichannel — en koppel bestaande systemen, zodat losse tools één werkende stack worden. Voor branche, retail, klus, horeca en dienstverlening. AVG-compliant.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.kevinvanwilligenburg.nl",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sitekevin.vercel.app",
   email: "kevin@gents.nl",
-  phoneDisplay: "+31 6 12 34 56 78",
-  phoneHref: "+31612345678",
+  // Laat leeg tot de echte waarde bekend is — liever niets dan nepgegevens.
+  // Ze worden overal conditioneel weergegeven.
+  phoneDisplay: "",
+  phoneHref: "",
   locatie: "Nederland — op locatie of remote",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP ?? "",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK ?? "",
-  // Bedrijfsgegevens — vul aan zodra KvK/BTW bekend zijn
-  kvk: "KvK 00000000",
-  btw: "BTW NL0000.00.000.B00",
+  // Bedrijfsgegevens — vul aan zodra bekend (worden verborgen zolang leeg)
+  kvk: "",
+  btw: "",
 } as const;
 
 export const nav: { label: string; href: string }[] = [
@@ -389,7 +391,7 @@ export const swvCase = {
     { value: "6–8", label: "systemen vervangen door één portaal" },
     { value: "20–40u", label: "binnendienst bespaard per week" },
     { value: "400", label: "studenten in één dossier" },
-    { value: "100%", label: "AVG-dossier op orde" },
+    { value: "1", label: "AVG-dossier i.p.v. verspreide data" },
   ],
   screenshots: [
     { title: "Studentdashboard", note: "Voortgang, documenten en contactmomenten per student." },

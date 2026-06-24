@@ -11,7 +11,8 @@ import { services } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Diensten",
   description:
-    "Portaal-implementatie, integraties, AVG-compliance, training, onderhoud en custom development voor branche-verenigingen met BBL-administratie.",
+    "Eigen systemen bouwen, bestaande systemen koppelen, AVG, training en onderhoud — maatwerk software voor branche, retail, klus, horeca en dienstverlening.",
+  alternates: { canonical: "/diensten" },
 };
 
 const process = [
@@ -98,7 +99,7 @@ export default function DienstenPage() {
           <SectionHeading
             eyebrow="Zo werkt het"
             eyebrowIcon="repeat"
-            title="Van kennismaking tot live in 4 tot 12 weken."
+            title="Van kennismaking tot live in 8 tot 12 weken."
             lead="Een duidelijk traject met vaste fases. Je weet steeds waar we staan en wat de volgende stap is."
           />
           <ol className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-5">

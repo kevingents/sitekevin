@@ -31,19 +31,24 @@ function Slider({
   format: (v: number) => string;
 }) {
   const pct = ((value - min) / (max - min)) * 100;
+  const id = "roi-" + label.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase();
   return (
     <div>
       <div className="flex items-baseline justify-between">
-        <label className="text-sm font-medium text-ink/70">{label}</label>
+        <label htmlFor={id} className="text-sm font-medium text-ink/70">
+          {label}
+        </label>
         <span className="text-base font-semibold tabular-nums text-ink">{format(value)}</span>
       </div>
       <input
+        id={id}
         type="range"
         min={min}
         max={max}
         step={step}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
+        aria-valuetext={format(value)}
         className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-ink/10 accent-brand"
         style={{
           background: `linear-gradient(to right, #EC6806 ${pct}%, rgba(15,23,42,0.1) ${pct}%)`,

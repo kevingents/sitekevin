@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/icon";
@@ -22,6 +22,12 @@ export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
   const [onderwerp, setOnderwerp] = useState("demo");
+  const successRef = useRef<HTMLHeadingElement>(null);
+
+  // Verplaats focus naar de bevestiging zodra het bericht verstuurd is
+  useEffect(() => {
+    if (status === "success") successRef.current?.focus();
+  }, [status]);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -56,7 +62,13 @@ export function ContactForm() {
         <span className="grid h-14 w-14 place-items-center rounded-full bg-emerald-500 text-white">
           <Icon name="check" className="h-7 w-7" strokeWidth={2.5} />
         </span>
-        <h3 className="mt-5 text-xl font-semibold tracking-tight text-ink">Bericht verstuurd</h3>
+        <h3
+          ref={successRef}
+          tabIndex={-1}
+          className="mt-5 text-xl font-semibold tracking-tight text-ink focus:outline-none"
+        >
+          Bericht verstuurd
+        </h3>
         <p className="mt-2 max-w-sm text-sm leading-relaxed text-ink/60">
           Bedankt voor je bericht. Ik reageer doorgaans binnen één werkdag — vaak
           sneller. Tot snel.
@@ -164,12 +176,16 @@ export function ContactForm() {
           required
           rows={5}
           className={cn(field, "resize-y")}
-          placeholder="Vertel kort over jullie situatie: hoeveel studenten, welke systemen nu, wat je zoekt."
+          placeholder="Vertel kort over jullie situatie: hoeveel gebruikers of locaties, welke systemen je nu gebruikt, en wat je zoekt."
         />
       </div>
 
       {status === "error" ? (
-        <div className="mt-5 flex items-start gap-2.5 rounded-xl border border-brand-200 bg-brand-50 px-4 py-3 text-sm text-brand-700">
+        <div
+          role="alert"
+          aria-live="assertive"
+          className="mt-5 flex items-start gap-2.5 rounded-xl border border-brand-200 bg-brand-50 px-4 py-3 text-sm text-brand-700"
+        >
           <Icon name="alert" className="mt-0.5 h-4 w-4 shrink-0" />
           <span>{error}</span>
         </div>

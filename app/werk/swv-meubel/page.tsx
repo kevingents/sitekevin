@@ -10,6 +10,7 @@ import { swvCase } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Case: branchevereniging meubel",
+  alternates: { canonical: "/werk/swv-meubel" },
   description:
     "Hoe een branchevereniging in de meubelindustrie van Excel, Outlook en zes losse systemen naar één portaal voor 400 BBL-studenten ging.",
 };

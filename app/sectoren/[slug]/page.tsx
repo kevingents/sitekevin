@@ -19,6 +19,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: `${sector.name} portaal`,
     description: sector.tagline,
+    alternates: { canonical: `/sectoren/${sector.slug}` },
   };
 }
 
@@ -67,7 +68,11 @@ export default function SectorDetailPage({ params }: { params: { slug: string } 
               <ButtonLink href="/contact" size="md" iconRight="arrow-right">
                 Plan kennismaking
               </ButtonLink>
-              <ButtonLink href="/werk/swv-meubel" size="md" variant="ghost">
+              <ButtonLink
+                href={relatedCase ? `/werk/${relatedCase.slug}` : "/werk"}
+                size="md"
+                variant="ghost"
+              >
                 Bekijk de live case
               </ButtonLink>
             </div>

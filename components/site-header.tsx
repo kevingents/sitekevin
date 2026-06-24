@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { nav } from "@/lib/site";
 import { Logo } from "@/components/logo";
@@ -13,6 +13,12 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  // Gesloten mobiel menu uit tab-order én toegankelijkheidsboom halen
+  useEffect(() => {
+    if (mobileMenuRef.current) mobileMenuRef.current.inert = !open;
+  }, [open]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -71,7 +77,7 @@ export function SiteHeader() {
             Plan kennismaking
           </ButtonLink>
           <ButtonLink href="/werk" variant="primary" size="sm" iconRight="arrow-right">
-            Bekijk demo
+            Bekijk werk
           </ButtonLink>
         </div>
 
@@ -94,6 +100,8 @@ export function SiteHeader() {
         )}
       >
         <div
+          ref={mobileMenuRef}
+          aria-hidden={!open}
           className={cn(
             "fixed inset-x-0 top-16 z-40 origin-top border-b border-ink/5 bg-bone px-5 pb-8 pt-2 shadow-card-lg transition-all duration-200",
             open ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0",
@@ -119,7 +127,7 @@ export function SiteHeader() {
               Plan kennismaking
             </ButtonLink>
             <ButtonLink href="/werk" variant="primary" size="md" className="w-full" iconRight="arrow-right">
-              Bekijk demo
+              Bekijk werk
             </ButtonLink>
           </div>
         </div>

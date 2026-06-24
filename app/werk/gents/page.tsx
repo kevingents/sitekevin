@@ -9,6 +9,7 @@ import { gentsCase } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Case: GENTS — omnichannel retail",
+  alternates: { canonical: "/werk/gents" },
   description:
     "Hoe GENTS van losse kassa, webshop en voorraad naar één omnichannel-keten ging: kassa en webshop gebouwd én gekoppeld, met realtime voorraad en één klantbeeld.",
 };

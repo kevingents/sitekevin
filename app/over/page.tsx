@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Over",
   description:
     "Over Willie (Kevin van Willigenburg) — software developer gespecialiseerd in maatwerk software voor MKB-bedrijven die nog met Excel en losse systemen werken.",
+  alternates: { canonical: "/over" },
 };
 
 const principles: { icon: IconName; title: string; body: string }[] = [

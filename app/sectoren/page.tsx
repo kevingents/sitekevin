@@ -9,6 +9,7 @@ import { sectors } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Sectoren",
+  alternates: { canonical: "/sectoren" },
   description:
     "Maatwerk portalen voor branche-verenigingen, retail, klusplatformen, horeca en dienstverlening. Eén patroon, vijf sectoren.",
 };

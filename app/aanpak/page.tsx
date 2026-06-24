@@ -11,6 +11,7 @@ import { comparison, priceFactors, aanpakFaq } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Aanpak & wat het kost",
+  alternates: { canonical: "/aanpak" },
   description:
     "Wat kost een maatwerk portaal? Geen vaste prijslijst, wel volledige transparantie: waar het tussen staat, wat de prijs bepaalt en hoe ik werk. Met ROI-calculator.",
 };
@@ -142,8 +143,8 @@ export default function AanpakPage() {
             <div className="flex flex-col justify-center rounded-2xl border border-dashed border-brand/30 bg-brand-50/40 p-6">
               <p className="text-base font-semibold tracking-tight text-ink">Liever gewoon een getal?</p>
               <p className="mt-2 text-sm leading-relaxed text-ink/60">
-                Stuur je situatie en je krijgt binnen één werkdag een heldere
-                offerte op maat.
+                Stuur je situatie en je krijgt binnen één werkdag een eerste reactie;
+                na een kort gesprek volgt een heldere offerte op maat.
               </p>
               <ButtonLink href="/contact" size="sm" className="mt-4 w-fit" iconRight="arrow-right">
                 Vraag offerte aan
@@ -228,7 +229,7 @@ export default function AanpakPage() {
 
       <CtaBand
         title="Klaar voor een offerte op maat?"
-        body="Stuur je situatie en ik maak een heldere offerte — projectprijs, doorlooptijd en eventuele integraties. Binnen één werkdag."
+        body="Stuur je situatie en je krijgt binnen één werkdag een eerste reactie. Na een kort gesprek volgt een heldere offerte — projectprijs, doorlooptijd en eventuele integraties."
         primaryLabel="Vraag offerte aan"
         secondaryLabel="Bekijk diensten"
         secondaryHref="/diensten"

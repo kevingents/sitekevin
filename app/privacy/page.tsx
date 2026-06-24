@@ -15,7 +15,11 @@ const sections: LegalSection[] = [
   {
     heading: "Wie verwerkt je gegevens",
     paragraphs: [
-      `${site.legalName}, handelend onder de naam ${site.name} (${site.kvk}, ${site.btw}), is verantwoordelijk voor de verwerking van persoonsgegevens via deze website. Vragen kun je stellen via ${site.email}.`,
+      `${site.legalName}, handelend onder de naam ${site.name}${
+        [site.kvk, site.btw].filter(Boolean).length
+          ? ` (${[site.kvk, site.btw].filter(Boolean).join(", ")})`
+          : ""
+      }, is verantwoordelijk voor de verwerking van persoonsgegevens via deze website. Vragen kun je stellen via ${site.email}.`,
     ],
   },
   {
@@ -37,9 +41,9 @@ const sections: LegalSection[] = [
     ],
   },
   {
-    heading: "Analytics",
+    heading: "Cookies en statistieken",
     paragraphs: [
-      "Deze website gebruikt privacy-vriendelijke, cookieloze statistieken (zoals Plausible of Umami). Daarbij worden geen persoonsgegevens herleidbaar opgeslagen en wordt geen profiel van je opgebouwd. Er worden geen tracking-cookies van derden geplaatst.",
+      "Deze website plaatst geen tracking- of advertentie-cookies en bouwt geen profiel van je op. Worden er statistieken bijgehouden, dan gebeurt dat met een privacy-vriendelijke, cookieloze tool (zoals Plausible of Umami) waarbij geen persoonsgegevens herleidbaar worden opgeslagen.",
     ],
   },
   {

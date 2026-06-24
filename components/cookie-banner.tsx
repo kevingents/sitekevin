@@ -43,8 +43,8 @@ export function CookieBanner() {
           <Icon name="shield-check" className="h-5 w-5" />
         </span>
         <p className="flex-1 text-sm leading-relaxed text-ink/65">
-          Deze site gebruikt alleen cookieloze, privacy-vriendelijke statistieken —
-          geen tracking, geen advertentie-cookies. Meer in de{" "}
+          Deze site gebruikt geen tracking- of advertentie-cookies. Eventuele
+          statistieken zijn cookieloos en privacy-vriendelijk. Meer in de{" "}
           <Link href="/privacy" className="font-semibold text-brand-600 hover:text-brand-700">
             privacyverklaring
           </Link>
