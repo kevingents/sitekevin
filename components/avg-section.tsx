@@ -44,9 +44,9 @@ export function AvgSection() {
               Privacy is geen bijzaak — het zit in het fundament.
             </h2>
             <p className="mt-4 max-w-lg text-pretty text-lg leading-relaxed text-white/65">
-              Branche-verenigingen verwerken gevoelige gegevens van honderden
-              studenten. In het portaal is AVG geen los project achteraf, maar
-              ingebouwd vanaf dag één. Dat bespaart al snel €5.000–€15.000 aan
+              Veel organisaties verwerken gevoelige gegevens van honderden mensen.
+              In elk systeem dat ik bouw of koppel is AVG geen los project achteraf,
+              maar ingebouwd vanaf dag één. Dat bespaart al snel €5.000–€15.000 aan
               externe compliance-consultancy.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

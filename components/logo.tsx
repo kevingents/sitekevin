@@ -44,7 +44,7 @@ export function Logo({
             isLight ? "text-white/60" : "text-ink/50",
           )}
         >
-          Branche-portalen
+          Maatwerk software
         </span>
       </span>
     </Link>

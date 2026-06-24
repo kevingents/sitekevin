@@ -63,17 +63,17 @@ export default function OpengraphImage() {
         {/* tagline */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           <span style={{ color: "white", fontSize: 68, fontWeight: 700, lineHeight: 1.05, letterSpacing: -1 }}>
-            Maatwerk portalen die
+            Maatwerk software die
           </span>
           <span style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.05, letterSpacing: -1, color: "#F9A862" }}>
-            handmatig werk vervangen.
+            handmatig werk vervangt.
           </span>
         </div>
 
         {/* footer */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <span style={{ color: "rgba(255,255,255,0.55)", fontSize: 24 }}>
-            Eén portaal · AVG uit de doos · live in 8–12 weken
+            Bouwen · koppelen · AVG uit de doos
           </span>
           <span style={{ color: "#F9A862", fontSize: 24, fontWeight: 600 }}>
             {site.url.replace(/^https?:\/\//, "")}

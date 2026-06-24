@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/diensten",
     "/werk",
     "/werk/swv-meubel",
+    "/werk/gents",
     "/aanpak",
     "/over",
     "/contact",

@@ -8,7 +8,7 @@ import { FlowTransform } from "@/components/flow-transform";
 import { SectorFilter } from "@/components/sector-filter";
 import { AvgSection } from "@/components/avg-section";
 import { CtaBand } from "@/components/cta-band";
-import { problems, roles, comparison, swvCase } from "@/lib/site";
+import { capabilities, problems, roles, comparison, swvCase } from "@/lib/site";
 
 const heroStats = [
   { value: "50–500", label: "gebruikers in één portaal" },
@@ -34,7 +34,7 @@ export default function HomePage() {
             <div className="animate-fade-up">
               <Eyebrow icon="sparkles">Branche · Retail · Klus · Horeca · Dienstverlening</Eyebrow>
               <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-                Maatwerk portalen die{" "}
+                Maatwerk software die{" "}
                 <span className="relative whitespace-nowrap text-brand">
                   handmatig werk
                   <svg
@@ -46,12 +46,13 @@ export default function HomePage() {
                     <path d="M0 6 Q 50 0 100 4 T 200 3" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                   </svg>
                 </span>{" "}
-                vervangen.
+                vervangt.
               </h1>
               <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-ink/65 sm:text-xl">
-                Eén werkplek voor jouw team, klanten en data — vervangt Excel,
-                Outlook-mapjes en losse systemen. Voor organisaties met 50 tot 500
-                medewerkers, leden of klanten. AVG-compliant, live in 8–12 weken.
+                Ik bouw eigen systemen — portalen, kassa&apos;s, webshops en
+                omnichannel — en koppel wat je al hebt. Van Excel, Outlook en losse
+                tools naar één werkende stack. Voor branche, retail, klus, horeca en
+                dienstverlening.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href="/contact" size="lg" icon="calendar">
@@ -80,6 +81,41 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ───────────────── Wat ik doe (3 poten) ───────────────── */}
+      <Section className="py-16 sm:py-20">
+        <SectionHeading
+          eyebrow="Wat ik doe"
+          eyebrowIcon="sparkles"
+          title="Bouwen, koppelen, vervangen."
+          lead="Geen one-size-fits-all tool, maar software die past op jouw proces. Ik bouw eigen systemen, verbind wat je al hebt, en vervang het handwerk ertussen."
+        />
+        <div className="mt-14 grid gap-5 lg:grid-cols-3">
+          {capabilities.map((c, i) => (
+            <Reveal
+              key={c.title}
+              delay={i * 80}
+              className="flex flex-col rounded-2xl border border-ink/8 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-card"
+            >
+              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand to-brand-600 text-white shadow-glow">
+                <Icon name={c.icon as never} className="h-6 w-6" />
+              </span>
+              <h3 className="mt-5 text-lg font-semibold tracking-tight text-ink">{c.title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/60">{c.body}</p>
+              <ul className="mt-5 flex flex-wrap gap-2 border-t border-ink/8 pt-4">
+                {c.examples.map((e) => (
+                  <li
+                    key={e}
+                    className="rounded-full bg-bone-200/60 px-2.5 py-1 text-xs font-medium text-ink/60"
+                  >
+                    {e}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
 
       {/* ───────────────── Sector-filter ───────────────── */}
       <section className="bg-bone-200/50 py-20 sm:py-24">
@@ -147,7 +183,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="De oplossing"
             eyebrowIcon="layout-dashboard"
-            title="Eén portaal voor jouw mensen."
+            title="Eén systeem voor jouw mensen."
             lead="Iedere rol ziet precies wat relevant is — maar het is dezelfde data, hetzelfde dossier, dezelfde waarheid. Geen overtypen, geen versieverwarring."
           />
 
@@ -203,10 +239,16 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
               <ButtonLink href="/werk/swv-meubel" size="md" iconRight="arrow-right">
                 Lees de case study
               </ButtonLink>
+              <Link
+                href="/werk/gents"
+                className="text-sm font-semibold text-brand-600 hover:text-brand-700"
+              >
+                Ook: GENTS omnichannel →
+              </Link>
             </div>
           </Reveal>
 

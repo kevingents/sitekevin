@@ -6,10 +6,10 @@
 export const site = {
   name: "Kevin van Willigenburg",
   shortName: "KvW",
-  product: "Maatwerk portalen",
-  tagline: "Maatwerk portalen die handmatig werk vervangen",
+  product: "Maatwerk software",
+  tagline: "Maatwerk software die handmatig werk vervangt",
   description:
-    "Maatwerk webportalen die 6+ losse systemen vervangen — voor branche-verenigingen, retail, klusplatformen, horeca en dienstverlening. AVG-compliant, live in 8–12 weken.",
+    "Ik bouw eigen systemen — portalen, kassa's, webshops en omnichannel — en koppel bestaande systemen, zodat losse tools één werkende stack worden. Voor branche, retail, klus, horeca en dienstverlening. AVG-compliant.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.kevinvanwilligenburg.nl",
   email: "kevin@gents.nl",
   phoneDisplay: "+31 6 12 34 56 78",
@@ -84,6 +84,33 @@ export const roles: { title: string; body: string; icon: string }[] = [
   },
 ];
 
+/** Wat ik doe — drie poten. Niet alleen portalen: bouwen, koppelen én vervangen. */
+export const capabilities: {
+  icon: string;
+  title: string;
+  body: string;
+  examples: string[];
+}[] = [
+  {
+    icon: "code",
+    title: "Eigen systemen bouwen",
+    body: "Maatwerk software die om jouw proces heen past, niet andersom. Van een multi-rol portaal tot een kassa, webshop of omnichannel-oplossing.",
+    examples: ["Portalen & SaaS", "Kassa (POS) & webshop", "Omnichannel retail"],
+  },
+  {
+    icon: "plug",
+    title: "Systemen koppelen",
+    body: "Bestaande systemen met elkaar verbinden, zodat data één keer wordt ingevoerd en overal klopt. Geen dubbel werk, geen overtypen.",
+    examples: ["Kassa ↔ webshop ↔ voorraad", "Exact / AFAS / Synergy", "DocuSign, HR & salaris"],
+  },
+  {
+    icon: "layout-dashboard",
+    title: "Handmatig werk vervangen",
+    body: "Van Excel, Outlook-mapjes en losse tools naar één werkende stack die meedenkt, signaleert en automatiseert.",
+    examples: ["Workflows & signalering", "Automatische facturatie", "Eén bron van waarheid"],
+  },
+];
+
 /** Sectoren die ik bedien — gebruikt door de sector-filter én de detailpagina's. */
 export type Sector = {
   slug: string;
@@ -121,11 +148,11 @@ export const sectors: Sector[] = [
   {
     slug: "retail",
     short: "Retail",
-    name: "Retail & multi-vestiging",
+    name: "Retail & omnichannel",
     icon: "building-2",
     tagline:
-      "Eén portaal voor filiaalmanagers, hoofdkantoor en personeel. Roosters, voorraadtransfers, uren en klantdata op één plek — werkt op de telefoon van de medewerker.",
-    voorbeelden: "Fashion-ketens en multi-vestiging retail (zoals GENTS)",
+      "Kassa, webshop, voorraad en filialen als één geheel. Online en winkel delen hetzelfde klantbeeld en dezelfde realtime voorraad — gebouwd én gekoppeld op maat.",
+    voorbeelden: "Fashion- en multi-vestiging retail (zoals GENTS: kassa, webshop & omnichannel)",
     pijnpunten: [
       { title: "Roosters en voorraad in losse sheets", body: "Elke vestiging houdt eigen Excel-bestanden bij die niet met elkaar praten." },
       { title: "Hoofdkantoor mist realtime zicht", body: "Omzet, voorraad en bezetting per filiaal zijn pas dagen later bekend." },
@@ -133,8 +160,9 @@ export const sectors: Sector[] = [
       { title: "Voorraadtransfers gaan op gevoel", body: "Producten verschuiven tussen filialen zonder centraal overzicht." },
       { title: "Medewerkers zonder mobiele toegang", body: "Rooster en mededelingen hangen aan het prikbord, niet op de telefoon." },
     ],
-    modules: ["Filiaal-rooster", "Voorraad-transfer", "Omzet-dashboard", "Uren-registratie", "Personeelsbeheer", "Mobiele medewerker-app"],
-    priceHint: "Projectprijs op maat — afhankelijk van het aantal vestigingen, gebruikers en koppelingen (kassa, HR, salaris).",
+    modules: ["Kassa (POS)", "Webshop", "Omnichannel & één klantbeeld", "Realtime voorraad", "Filiaal-rooster", "Omzet-dashboard"],
+    priceHint: "Projectprijs op maat — afhankelijk van het aantal vestigingen, kanalen en koppelingen (kassa, webshop, voorraad, HR).",
+    relatedCaseSlug: "gents",
   },
   {
     slug: "klus",
@@ -206,17 +234,17 @@ export const services: {
 }[] = [
   {
     icon: "layout-dashboard",
-    title: "Portaal-implementatie",
-    body: "Volledige oplevering: setup, datamigratie, rollen, integraties, training en go-live. Eén werkplek voor al je processen.",
+    title: "Eigen systemen & portalen",
+    body: "Maatwerk software die om jouw proces past: een multi-rol portaal, maar net zo goed een kassa, webshop of omnichannel-oplossing. Inclusief migratie, training en go-live.",
     price: "Projectprijs op maat",
-    bullets: ["Multi-rol portaal (3–4 rollen)", "Data-migratie uit Excel/Outlook", "Training & go-live begeleiding"],
+    bullets: ["Portalen, kassa (POS) & webshop", "Data-migratie uit Excel/Outlook", "Training & go-live begeleiding"],
   },
   {
     icon: "plug",
-    title: "Integraties",
-    body: "Koppelingen met de systemen die je al gebruikt, zodat data niet dubbel ingevoerd hoeft te worden.",
+    title: "Systemen koppelen",
+    body: "Bestaande systemen met elkaar verbinden, zodat data één keer wordt ingevoerd en overal klopt — kassa, webshop, voorraad, boekhouding en HR.",
     price: "Vaste prijs per koppeling",
-    bullets: ["Synergy / AFAS / Exact", "Cleverdesk / DocuSign", "Custom integraties"],
+    bullets: ["Kassa ↔ webshop ↔ voorraad", "Exact / AFAS / Synergy", "Cleverdesk, DocuSign & custom"],
   },
   {
     icon: "shield-check",
@@ -330,3 +358,44 @@ export const swvCase = {
     { title: "AVG-dossier", note: "Verwerkingsregister en retentie automatisch bijgehouden." },
   ],
 } as const;
+
+/** Tweede case — omnichannel retail. Feitelijk en bescheiden; details in overleg aan te scherpen. */
+export const gentsCase = {
+  slug: "gents",
+  klant: "GENTS — herenmode",
+  klantKort: "GENTS",
+  type: "Omnichannel retail",
+  intro:
+    "GENTS verkoopt herenmode online én in de winkel. Kassa, webshop en voorraad waren losse eilanden — een klant online was een andere klant dan in de winkel, en de voorraad klopte zelden realtime. Doel: één keten waarin online en winkel samenwerken.",
+  geleverd: ["Kassa (POS)", "Webshop", "Omnichannel-koppeling", "Realtime voorraad", "Eén klantbeeld"],
+  problemen: [
+    { title: "Webshop en kassa los van elkaar", body: "Online en winkel draaiden op eigen systemen die elkaars data niet kenden." },
+    { title: "Voorraad niet realtime", body: "Wat online op voorraad stond, klopte niet altijd met wat er in de winkel lag." },
+    { title: "Geen één klantbeeld", body: "Dezelfde klant online en in de winkel werd nergens herkend als dezelfde persoon." },
+    { title: "Handwerk tussen kanalen", body: "Bestellingen, retouren en voorraad werden met de hand tussen systemen overgezet." },
+  ],
+  aanpak: [
+    { week: "Bouwen", title: "Kassa & webshop op maat", body: "Een kassa- en webshop-laag die op het assortiment en de werkwijze van de winkel past." },
+    { week: "Koppelen", title: "Kanalen verbinden", body: "Kassa, webshop en voorraad aan elkaar gekoppeld tot één realtime keten." },
+    { week: "Samenvoegen", title: "Eén klantbeeld", body: "Online- en winkelklant samengebracht, zodat elke klant overal herkend wordt." },
+    { week: "Automatiseren", title: "Voorraad & orders", body: "Voorraad, bestellingen en retouren lopen automatisch over alle kanalen." },
+  ],
+  resultaten: [
+    { value: "1", label: "klantbeeld over online + winkel" },
+    { value: "realtime", label: "voorraad over alle kanalen" },
+    { value: "omnichannel", label: "kassa en webshop als één keten" },
+    { value: "minder", label: "handwerk tussen systemen" },
+  ],
+  screenshots: [
+    { title: "Kassa (POS)", note: "Afrekenen in de winkel, gekoppeld aan dezelfde voorraad als online." },
+    { title: "Webshop", note: "Online bestellen met realtime voorraad en één klantaccount." },
+    { title: "Voorraad", note: "Eén voorraad over winkel en webshop, automatisch bijgewerkt." },
+    { title: "Klantbeeld", note: "Online- en winkelaankopen van dezelfde klant in één overzicht." },
+  ],
+} as const;
+
+/** Case-index — gebruikt door sectorpagina's om naar de juiste case te verwijzen. */
+export const cases: Record<string, { slug: string; klant: string; intro: string }> = {
+  "swv-meubel": { slug: "swv-meubel", klant: swvCase.klant, intro: swvCase.intro },
+  gents: { slug: gentsCase.slug, klant: gentsCase.klant, intro: gentsCase.intro },
+};

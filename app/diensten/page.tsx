@@ -48,8 +48,8 @@ export default function DienstenPage() {
       <PageHeader
         eyebrow="Diensten"
         eyebrowIcon="layout-dashboard"
-        title="Alles om van losse systemen naar één portaal te gaan."
-        lead="Van implementatie tot onderhoud. Vaste prijzen waar het kan, transparant per uur waar het moet. Je hebt één aanspreekpunt — geen consultancy-laag ertussen."
+        title="Alles om van losse systemen naar één werkende stack te gaan."
+        lead="Eigen systemen bouwen, bestaande systemen koppelen, en alles eromheen: migratie, AVG, training en onderhoud. Je hebt één aanspreekpunt — geen consultancy-laag ertussen."
       >
         <div className="flex flex-wrap gap-3">
           <ButtonLink href="/contact" size="md" iconRight="arrow-right">

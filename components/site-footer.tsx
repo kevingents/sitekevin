@@ -14,7 +14,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-6 border-b border-white/10 py-14 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="max-w-xl text-2xl font-semibold tracking-tight sm:text-3xl">
-              Klaar om van Excel-chaos naar één portaal te gaan?
+              Klaar om van Excel-chaos naar één werkende stack te gaan?
             </h2>
             <p className="mt-2 max-w-lg text-white/60">
               Plan een vrijblijvende kennismaking van 30 minuten. Ik laat je het
@@ -44,8 +44,9 @@ export function SiteFooter() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Logo tone="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
-              Branche-portalen die handmatig werk vervangen. Voor verenigingen met
-              BBL-studenten, leerbedrijven en binnendienst.
+              Maatwerk software die handmatig werk vervangt. Eigen systemen bouwen,
+              bestaande systemen koppelen — voor branche, retail, klus, horeca en
+              dienstverlening.
             </p>
           </div>
 

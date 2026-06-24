@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
 import { Icon } from "@/components/icon";
 
 const OLD_SYSTEMS = [
-  "Outlook regiomappen",
-  "Excel-administratie",
-  "Cleverdesk",
-  "Exact Synergy",
-  "DocuSign",
-  "P-schijf",
+  "Losse Excel-sheets",
+  "Outlook-mapjes",
+  "Aparte kassa",
+  "Losse webshop",
+  "Papieren planning",
+  "Los boekhoudpakket",
 ];
 
 /**
@@ -88,7 +88,7 @@ export function FlowTransform() {
               <Icon name="layout-dashboard" className="h-5 w-5" />
             </span>
             <div>
-              <div className="text-sm font-semibold text-ink">Eén brancheportaal</div>
+              <div className="text-sm font-semibold text-ink">Eén werkende stack</div>
               <div className="text-[0.72rem] text-ink/55">
                 {absorbed} van {OLD_SYSTEMS.length} systemen vervangen
               </div>
@@ -101,7 +101,7 @@ export function FlowTransform() {
             />
           </div>
           <div className="mt-3 flex flex-wrap gap-1.5">
-            {["Student", "Leerbedrijf", "Coördinator", "Binnendienst"].map((r) => (
+            {["Bouwen", "Koppelen", "Automatiseren", "AVG-proof"].map((r) => (
               <span
                 key={r}
                 className="rounded-full bg-white px-2 py-0.5 text-[0.65rem] font-medium text-ink/60 ring-1 ring-inset ring-ink/8"

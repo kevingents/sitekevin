@@ -7,7 +7,7 @@ import { Icon, type IconName } from "@/components/icon";
 import { ButtonLink } from "@/components/ui/button";
 import { CtaBand } from "@/components/cta-band";
 import { AvgSection } from "@/components/avg-section";
-import { sectors, getSector, swvCase } from "@/lib/site";
+import { sectors, getSector, cases } from "@/lib/site";
 
 export function generateStaticParams() {
   return sectors.map((s) => ({ slug: s.slug }));
@@ -25,6 +25,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 export default function SectorDetailPage({ params }: { params: { slug: string } }) {
   const sector = getSector(params.slug);
   if (!sector) notFound();
+
+  const relatedCase = sector.relatedCaseSlug ? cases[sector.relatedCaseSlug] : null;
 
   return (
     <>
@@ -55,7 +57,7 @@ export default function SectorDetailPage({ params }: { params: { slug: string } 
               <Eyebrow icon="layout-dashboard">{sector.name}</Eyebrow>
             </div>
             <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl">
-              Eén portaal voor {sector.name.toLowerCase()}.
+              Eén systeem voor {sector.name.toLowerCase()}.
             </h1>
             <p className="mt-5 text-pretty text-lg leading-relaxed text-ink/65 sm:text-xl">
               {sector.tagline}
@@ -150,22 +152,20 @@ export default function SectorDetailPage({ params }: { params: { slug: string } 
           <div>
             <Eyebrow icon="briefcase">Vergelijkbaar werk</Eyebrow>
             <h2 className="mt-4 text-balance text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-              {sector.relatedCaseSlug
-                ? "De live case in deze sector."
-                : "Bewezen patroon, nieuwe sector."}
+              {relatedCase ? "De live case in deze sector." : "Bewezen patroon, nieuwe sector."}
             </h2>
             <p className="mt-3 text-pretty leading-relaxed text-ink/65">
-              {sector.relatedCaseSlug
-                ? swvCase.intro
-                : "Het flagship-portaal draait bij een branchevereniging in de meubelindustrie en vervangt daar 6–8 systemen. Dezelfde kern past op jouw sector — de patronen zijn universeel, de modules op maat."}
+              {relatedCase
+                ? relatedCase.intro
+                : "Mijn cases draaien bij een branchevereniging in de meubelindustrie en bij GENTS (omnichannel retail). Dezelfde aanpak past op jouw sector — bouwen, koppelen en handmatig werk vervangen."}
             </p>
             <div className="mt-6">
               <ButtonLink
-                href={sector.relatedCaseSlug ? `/werk/${sector.relatedCaseSlug}` : "/werk"}
+                href={relatedCase ? `/werk/${relatedCase.slug}` : "/werk"}
                 size="md"
                 iconRight="arrow-right"
               >
-                {sector.relatedCaseSlug ? "Lees de case study" : "Bekijk het werk"}
+                {relatedCase ? "Lees de case study" : "Bekijk het werk"}
               </ButtonLink>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function SectorDetailPage({ params }: { params: { slug: string } 
       <AvgSection />
 
       <CtaBand
-        title={`Een portaal voor ${sector.name.toLowerCase()}?`}
+        title={`Een systeem voor ${sector.name.toLowerCase()}?`}
         body="Plan een kennismaking van 30 minuten. Ik laat de live case zien en vertaal de aanpak naar jouw situatie."
         secondaryLabel="Andere sectoren"
         secondaryHref="/sectoren"

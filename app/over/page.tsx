@@ -83,13 +83,18 @@ export default function OverPage() {
           <div className="flex flex-col gap-10">
             <Reveal className="space-y-4 text-pretty text-lg leading-relaxed text-ink/70">
               <p>
-                Ik ben Kevin — software developer en ZZP&apos;er, gespecialiseerd in
-                maatwerk webportalen voor organisaties die nog met Excel,
-                Outlook-mapjes en losse systemen werken. Mijn flagship is een portaal
-                dat de complete administratie van een branchevereniging vervangt:
-                studenten, leerbedrijven, scholen, coördinatoren en binnendienst,
-                allemaal in één werkplek. Datzelfde patroon werkt voor retail,
-                klusplatformen, horeca en dienstverlening.
+                Ik ben Kevin — software developer en ZZP&apos;er. Ik bouw maatwerk
+                software én koppel bestaande systemen voor organisaties die nog met
+                Excel, Outlook-mapjes en losse tools werken. Soms is dat een portaal,
+                soms een kassa met webshop en omnichannel, en vaak de koppeling die
+                alles met elkaar laat samenwerken.
+              </p>
+              <p>
+                Mijn werk loopt van een BBL-portaal dat de complete administratie van
+                een branchevereniging vervangt (studenten, leerbedrijven, scholen,
+                coördinatoren en binnendienst) tot de omnichannel-keten van GENTS,
+                waar kassa, webshop en voorraad als één geheel werken. Datzelfde
+                patroon past op retail, klus, horeca en dienstverlening.
               </p>
               <p>
                 Wat me overal opvalt: de mensen zijn vakkundig en betrokken, maar hun
